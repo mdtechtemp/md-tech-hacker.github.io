@@ -1,0 +1,513 @@
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD TECH HACKER - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 70px;
+      height: 100vh;
+      background-color: #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1000;
+    }
+    .sidebar-icon {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #888;
+    }
+    .sidebar-icon:hover {
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+    .sidebar-icon a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .main-content {
+      margin-left: 70px;
+      min-height: 100vh;
+    }
+    .header {
+      background-color: #2a2a2a;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .search-bar {
+      background-color: #1a1a1a;
+      border: 1px solid #3a3a3a;
+      border-radius: 20px;
+      padding: 8px 15px;
+      color: #fff;
+      width: 300px;
+    }
+    .nav-menu {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .nav-link {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #fff;
+    }
+    .telegram-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 15px 20px;
+      margin: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .join-btn {
+      background-color: #00d4aa;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .join-btn:hover {
+      background-color: #00b894;
+    }
+    .content-area {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .main-posts {
+      flex: 1;
+    }
+    .sidebar-right {
+      width: 300px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      height: fit-content;
+    }
+    .post-card {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+    .post-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .post-content {
+      padding: 20px;
+    }
+    .post-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .post-meta {
+      color: #888;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .popular-posts-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .popular-post-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+    .popular-post-item:hover {
+      background-color: #3a3a3a;
+    }
+    .popular-post-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .popular-post-text {
+      flex: 1;
+    }
+    .popular-post-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .popular-post-date {
+      font-size: 12px;
+      color: #888;
+    }
+    .header-icons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .header-icon {
+      color: #888;
+      font-size: 18px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .header-icon:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon">
+      <a href="index/" title="Home">
+        <i class="fas fa-home"></i>
+      </a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="bins/" title="Bins">
+        <i class="fas fa-credit-card"></i>
+      </a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="extraps/" title="Extraps">
+        <i class="fas fa-star"></i>
+      </a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="accounts/" title="Accounts">
+        <i class="fas fa-user"></i>
+      </a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="vpn/" title="VPN">
+        <i class="fas fa-shield-alt"></i>
+      </a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="MD_TECH_GEN/" title="Card Generator" target="_blank">
+        <i class="fas fa-credit-card"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="text-xl font-bold">MD TECH HACKER</h1>
+      <input type="text" class="search-bar" placeholder="Try searching 'BINS'" />
+      <div class="header-icons">
+        <i class="header-icon fas fa-bookmark"></i>
+        <i class="header-icon fas fa-file-alt"></i>
+        <i class="header-icon fas fa-user-circle"></i>
+        <i class="header-icon fas fa-moon"></i>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+      <div class="nav-links">
+        <a href="bins/" class="nav-link">BINS</a>
+        <a href="extraps/" class="nav-link">EXTRAPS</a>
+        <a href="accounts/" class="nav-link">ACCOUNTS</a>
+        <a href="vpn/" class="nav-link">VPN</a>
+        <a href="MD_TECH_GEN/" class="nav-link" target="_blank">CARD GEN</a>
+      </div>
+
+      <!-- Telegram Banner -->
+      <div class="telegram-banner">
+        <span>Join Our Channel Of telegram Now</span>
+        <a href="https://t.me/+SPjxul1Ln6A4YWRl" class="join-btn">JOIN NOW!</a>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <!-- Main Posts -->
+      <div class="main-posts">
+        <!-- MD TECH HACKER Banner -->
+        <div
+          style="
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+          "
+        >
+          <h2 style="font-size: 48px; font-weight: bold; margin-bottom: 20px">MD TECH HACKER</h2>
+          <p style="font-size: 18px; margin-bottom: 20px">JOIN AND CHECK CC NOW!</p>
+          <a
+            href="https://t.me/+SPjxul1Ln6A4YWRl"
+            style="
+              background-color: #00d4aa;
+              color: white;
+              padding: 12px 30px;
+              border-radius: 25px;
+              text-decoration: none;
+              font-weight: 600;
+            "
+            >JOIN NOW</a
+          >
+        </div>
+
+        <!-- Blog Posts -->
+        <div class="main-posts">
+
+  <!-- About Me Section -->
+  <div
+    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 40px; margin-bottom: 30px; text-align: center; position: relative;"
+  >
+    <h2 style="font-size: 36px; font-weight: bold; margin-bottom: 10px;">🔹 About Me – MD (Founder, MD TECH HACKER)</h2>
+    <p style="font-size: 18px; margin-bottom: 20px;">
+      I’m MD — a tech explorer with a passion for hacking, automation, and system customization. I work across platforms like Termux and Android to build clean, efficient, and powerful tools. My journey is fueled by curiosity and a drive to make systems smarter.
+    </p>
+    <p>
+      <strong>🔐 My Official Identity</strong><br>
+      My digital identity as MD TECH HACKER is officially linked to my YouTube channel:<br>
+      <a href="https://youtube.com/@TECHTAMILMD" target="_blank" style="color:#fff; text-decoration: underline;">🔴 youtube.com/@TECHTAMILMD</a>
+      <br>
+      <span>✅ Telegram Proof: <a href="https://t.me/+SPjxul1Ln6A4YWRl" style="color:#fff; text-decoration: underline;">t.me/+SPjxul1Ln6A4YWRl</a></span><br>
+      <span>✅ Identity Note: <a href="https://telegra.ph/MD-TECH-HACKER-05-21" style="color:#fff; text-decoration: underline;">telegra.ph/MD-TECH-HACKER-05-21</a></span>
+    </p>
+  </div>
+
+  <!-- Tools and Platforms Section -->
+  <div class="post-card">
+    <div class="post-content">
+      <h3 class="post-title">👨‍💻 Tools I Use</h3>
+      <div class="post-meta" style="margin-bottom: 10px;">
+        Termux / Shell / CMD<br>
+        Python / Bash / Git<br>
+        Android UI Mods & Tweaks
+      </div>
+      <h3 class="post-title" style="margin-top: 20px;">🌐 My Platforms</h3>
+      <div class="post-meta" style="margin-bottom: 10px;">
+        🔴 YouTube: <a href="https://youtube.com/@TECHTAMILMD" style="color:#fff;">@TECHTAMILMD</a><br>
+        📢 Telegram Main: <a href="https://t.me/MD_TECH_HACKER" style="color:#fff;">@MD_TECH_HACKER</a><br>
+        🤖 Bots Hub: <a href="https://t.me/MD_TECH_BOTS" style="color:#fff;">@MD_TECH_BOTS</a><br>
+        💻 GitHub: <a href="https://github.com/MD-TECH-HACKER" style="color:#fff;">『⛥ 𝗠𝗗 𝗧𝗘𝗖𝗛 𝗛𝗔𝗖𝗞𝗘𝗥 ⛥』</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommended Tools -->
+  <div class="post-card">
+    <div class="post-content">
+      <h3 class="post-title">🧰 Recommended Tools</h3>
+      <div class="post-meta">
+        <strong>Termux</strong> — Terminal emulator for Android<br>
+        <strong>Git</strong> — Version control system<br>
+        <strong>Python</strong> — Scripting and automation
+      </div>
+      <h3 class="post-title" style="margin-top: 20px;">📌 Pinned Project</h3>
+      <div class="post-meta">Termux Login UI in Github</div>
+    </div>
+  </div>
+
+  <!-- Educational Bins -->
+  <div class="post-card">
+    <div class="post-content">
+      <h3 class="post-title">🗑️ Educational Bins</h3>
+      <div class="post-meta">
+        BINs (Bank Identification Numbers) are for educational purposes only. Use responsibly and ethically.<br><br>
+        <strong>BIN 1:</strong> 1234 56xx xxxx xxxx (Testing only)<br>
+        <strong>BIN 2:</strong> 6543 21xx xxxx xxxx (Testing only)
+      </div>
+    </div>
+  </div>
+
+  <!-- Gen BIN Section -->
+  <div class="post-card">
+    <div class="post-content">
+      <h3 class="post-title">🗑️ Gen Bins</h3>
+      <div class="post-meta">GEN BIN</div>
+    </div>
+  </div>
+
+  <!-- VIP Channel Section -->
+  <div class="post-card" style="border:2px solid gold;">
+    <div class="post-content">
+      <h3 class="post-title" style="color:gold;">🚨 VIP CHANNEL 🚨</h3>
+      <div class="post-meta" style="font-size:15px;">
+        <b>💎Gain access to exclusive premium methods and tools:</b>
+        <ul style="text-align:left; margin:10px 0 10px 25px;">
+          <li>☑️ Netflix Method (HD/UHD, 1/3/1Y)</li>
+          <li>☑️ YouTube Premium (1/2/6/1Y method)</li>
+          <li>☑️ Spotify Premium (Family,1/3/6/1Y method + 3 Method)</li>
+          <li>☑️ JIO Hotstar (VIP/Premium, 1/3/1Y method)</li>
+          <li>☑️ Prime Video + Prime (1/6/1Y method)</li>
+          <li>☑️ Crunchyroll Method (1/1Y method)</li>
+          <li>☑️ Telegram Premium (1/3/1Y method + ⭐️)</li>
+          <li>☑️ Google One (2TB+AI/200GB method)</li>
+          <li>☑️ Microsoft 365 (Family/Personal, 1/1Y method)</li>
+          <li>☑️ Xbox Ultimate Pass + Copilot Pro (1Y method)</li>
+          <li>☑️ ChatGPT (1Y Pro Plus method)</li>
+          <li>☑️ ADOBE Cloud (1Y/lifetime method)</li>
+          <li>☑️ Wondershare & Drive Products (1Y/lifetime method)</li>
+          <li>☑️ Canva Pro + Capcut Pro (1/1Y/lifetime method)</li>
+          <li>☑️ Discord Nitro (1/3Y method)</li>
+          <li>☑️ AWS, Azure RDP (Method)</li>
+          <li>☑️ GTA V (Steam under ₹640 CC method)</li>
+          <li>👑 AND MORE THAN 1000+ STUFF ✔️</li>
+        </ul>
+        <div style="margin: 10px 0;"><b>🤩 Price : ₹1500/$15 OR CRYPTO ACCEPTED 🥇 Lifetime ✅</b></div>
+        <div>💎 Monthly ₹800/$10 ✅</div>
+        <div style="margin: 10px 0;">🤩 NOTE: Early access = guaranteed entry to the private channel—don't miss out!<br>
+        <b>And no refund and no scam ✅</b></div>
+        <div>☝️ DM For Buy: <a href="https://t.me/MD_TECH_HACKER" style="color:#fff;">@MD_TECH_HACKER 🚀</a></div>
+        <div style="margin-top:10px;">For proof 🤩: <a href="PROOF-LINK-HERE" style="color:#fff;">Proof Link</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+      <!-- Right Sidebar -->
+      <div class="sidebar-right">
+        <h3 class="popular-posts-title">Popular Posts</h3>
+
+        
+          
+
+        <!-- Channel Links -->
+        <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #3a3a3a">
+          <h4 style="color: #fff; margin-bottom: 15px">Our Channels</h4>
+          <div style="display: flex; flex-direction: column; gap: 10px">
+            <a
+              href="https://youtube.com/@TECHTAMILMD"
+              style="
+                color: #888;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='#3a3a3a'"
+              onmouseout="this.style.backgroundColor='transparent'"
+              ><i class="fab fa-youtube" style="margin-right: 8px"></i
+              >YouTube</a
+            >
+            <a
+              href="https://t.me/TAMILFACTSMD5"
+              style="
+                color: #888;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='#3a3a3a'"
+              onmouseout="this.style.backgroundColor='transparent'"
+              ><i class="fab fa-telegram" style="margin-right: 8px"></i
+              >Telegram Main</a
+            >
+            <a
+              href="https://t.me/MD_TECH_BOTS"
+              style="
+                color: #888;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='#3a3a3a'"
+              onmouseout="this.style.backgroundColor='transparent'"
+              ><i class="fas fa-robot" style="margin-right: 8px"></i
+              >Bots Hub</a
+            >
+            <a
+              href="https://github.com/MD-TECH-HACKER"
+              style="
+                color: #888;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='#3a3a3a'"
+              onmouseout="this.style.backgroundColor='transparent'"
+              ><i class="fab fa-github" style="margin-right: 8px"></i
+              >GitHub</a
+            >
+            <a
+              href="MD_TECH_GEN/"
+              target="_blank"
+              style="
+                color: #888;
+                text-decoration: none;
+                padding: 8px;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+              "
+              onmouseover="this.style.backgroundColor='#3a3a3a'"
+              onmouseout="this.style.backgroundColor='transparent'"
+              ><i class="fas fa-credit-card" style="margin-right: 8px"></i
+              >Card Generator</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

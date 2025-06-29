@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD TECH HACKER - Extraps</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 70px;
+      height: 100vh;
+      background-color: #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1000;
+    }
+    .sidebar-icon {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #888;
+    }
+    .sidebar-icon:hover {
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+    .sidebar-icon a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .main-content {
+      margin-left: 70px;
+      min-height: 100vh;
+    }
+    .header {
+      background-color: #2a2a2a;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .search-bar {
+      background-color: #1a1a1a;
+      border: 1px solid #3a3a3a;
+      border-radius: 20px;
+      padding: 8px 15px;
+      color: #fff;
+      width: 300px;
+    }
+    .nav-menu {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .nav-link {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #fff;
+    }
+    .telegram-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 15px 20px;
+      margin: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .join-btn {
+      background-color: #00d4aa;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .join-btn:hover {
+      background-color: #00b894;
+    }
+    .content-area {
+      padding: 20px;
+    }
+    .extraps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .extrap-card {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .extrap-card:hover {
+      transform: translateY(-5px);
+      background-color: #3a3a3a;
+    }
+    .extrap-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #00d4aa;
+      margin-bottom: 15px;
+    }
+    .extrap-content {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .copy-btn {
+      background-color: #3a3a3a;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    .copy-btn:hover {
+      background-color: #4a4a4a;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon">
+      <a href="index/" title="Home"><i class="fas fa-home"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="bins/" title="Bins"><i class="fas fa-credit-card"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="extraps/" title="Extraps"><i class="fas fa-star"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="accounts/" title="Accounts"><i class="fas fa-user"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="vpn/" title="VPN"><i class="fas fa-shield-alt"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="MD_TECH_GEN/" title="Card Generator" target="_blank"><i class="fas fa-credit-card"></i></a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="text-xl font-bold">MD TECH HACKER</h1>
+      <input type="text" class="search-bar" placeholder="Search extraps..." />
+      <div class="header-icons">
+        <i class="header-icon fas fa-bookmark"></i>
+        <i class="header-icon fas fa-file-alt"></i>
+        <i class="header-icon fas fa-user-circle"></i>
+        <i class="header-icon fas fa-moon"></i>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+      <div class="nav-links">
+        <a href="bins/" class="nav-link">BINS</a>
+        <a href="extraps/" class="nav-link">EXTRAPS</a>
+        <a href="accounts/" class="nav-link">ACCOUNTS</a>
+        <a href="vpn/" class="nav-link">VPN</a>
+        <a href="MD_TECH_GEN/" class="nav-link" target="_blank">CARD GEN</a>
+      </div>
+
+      <!-- Telegram Banner -->
+      <div class="telegram-banner">
+        <span>Join Our Channel Of telegram Now</span>
+        <a href="https://t.me/+SPjxul1Ln6A4YWRl" class="join-btn">JOIN NOW!</a>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <h2 class="text-2xl font-bold text-center mb-8">Latest Extraps</h2>
+      <div class="extraps-grid">
+        <!-- Extrap Cards -->
+        <div class="extrap-card">
+          <div class="extrap-title">NETFLIX PREMIUM EXTRAP 🎬</div>
+          <div class="extrap-content">
+            <p>STATUS: WORKING ✅</p>
+            <p>SUCCESS RATE: 85%</p>
+            <p>LAST UPDATED: 2024-01-20</p>
+            <p class="mt-4">INSTRUCTIONS:</p>
+            <ol class="list-decimal ml-4 mt-2">
+              <li>Use US IP</li>
+              <li>Clear cookies</li>
+              <li>Follow steps exactly</li>
+            </ol>
+            <button class="copy-btn">
+              <i class="fas fa-copy mr-2"></i> Copy Extrap
+            </button>
+          </div>
+        </div>
+
+        <div class="extrap-card">
+          <div class="extrap-title">SPOTIFY PREMIUM EXTRAP 🎵</div>
+          <div class="extrap-content">
+            <p>STATUS: WORKING ✅</p>
+            <p>SUCCESS RATE: 90%</p>
+            <p>LAST UPDATED: 2024-01-19</p>
+            <p class="mt-4">INSTRUCTIONS:</p>
+            <ol class="list-decimal ml-4 mt-2">
+              <li>Clean browser required</li>
+              <li>Use recommended VPN</li>
+              <li>Follow steps carefully</li>
+            </ol>
+            <button class="copy-btn">
+              <i class="fas fa-copy mr-2"></i> Copy Extrap
+            </button>
+          </div>
+        </div>
+
+        <div class="extrap-card">
+          <div class="extrap-title">AMAZON PRIME EXTRAP 🛒</div>
+          <div class="extrap-content">
+            <p>STATUS: WORKING ✅</p>
+            <p>SUCCESS RATE: 75%</p>
+            <p>LAST UPDATED: 2024-01-18</p>
+            <p class="mt-4">INSTRUCTIONS:</p>
+            <ol class="list-decimal ml-4 mt-2">
+              <li>Use fresh browser</li>
+              <li>Follow timing exactly</li>
+              <li>Check IP requirements</li>
+            </ol>
+            <button class="copy-btn">
+              <i class="fas fa-copy mr-2"></i> Copy Extrap
+            </button>
+          </div>
+        </div>
+
+        <div class="extrap-card">
+          <div class="extrap-title">DISNEY+ PREMIUM EXTRAP 🎥</div>
+          <div class="extrap-content">
+            <p>STATUS: WORKING ✅</p>
+            <p>SUCCESS RATE: 80%</p>
+            <p>LAST UPDATED: 2024-01-17</p>
+            <p class="mt-4">INSTRUCTIONS:</p>
+            <ol class="list-decimal ml-4 mt-2">
+              <li>Clear all cookies</li>
+              <li>Use recommended bin</li>
+              <li>Follow steps precisely</li>
+            </ol>
+            <button class="copy-btn">
+              <i class="fas fa-copy mr-2"></i> Copy Extrap
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Add click event listeners to copy buttons
+    document.querySelectorAll('.copy-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.parentElement.querySelector('ol').innerText;
+        navigator.clipboard.writeText(content).then(() => {
+          const originalText = button.innerHTML;
+          button.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
+          setTimeout(() => {
+            button.innerHTML = originalText;
+          }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

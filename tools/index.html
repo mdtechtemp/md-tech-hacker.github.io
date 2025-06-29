@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD TECH HACKER - Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Same styles as index.html for consistency */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #1a1a1a;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 70px;
+      height: 100vh;
+      background-color: #2a2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1000;
+    }
+    .sidebar-icon {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #888;
+    }
+    .sidebar-icon:hover {
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+    .sidebar-icon a {
+      color: inherit;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+    .main-content {
+      margin-left: 70px;
+      min-height: 100vh;
+    }
+    .header {
+      background-color: #2a2a2a;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .search-bar {
+      background-color: #1a1a1a;
+      border: 1px solid #3a3a3a;
+      border-radius: 20px;
+      padding: 8px 15px;
+      color: #fff;
+      width: 300px;
+    }
+    .nav-menu {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #3a3a3a;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 20px;
+    }
+    .nav-link {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #fff;
+    }
+    .telegram-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 15px 20px;
+      margin: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .join-btn {
+      background-color: #00d4aa;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .join-btn:hover {
+      background-color: #00b894;
+    }
+    .content-area {
+      padding: 20px;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .tools-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .tool-card {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .tool-card:hover {
+      transform: translateY(-5px);
+      background-color: #3a3a3a;
+    }
+    .tool-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #00d4aa;
+    }
+    .tool-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon">
+      <a href="index/" title="Home"><i class="fas fa-home"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="tools/" title="Tools"><i class="fas fa-tools"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="bins/" title="Bins"><i class="fas fa-credit-card"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="extraps/" title="Extraps"><i class="fas fa-star"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="accounts/" title="Accounts"><i class="fas fa-user"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="vpn/" title="VPN"><i class="fas fa-shield-alt"></i></a>
+    </div>
+    <div class="sidebar-icon">
+      <a href="MD_TECH_GEN/" title="Card Generator" target="_blank"><i class="fas fa-credit-card"></i></a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h1 class="text-xl font-bold">MD TECH HACKER</h1>
+      <input type="text" class="search-bar" placeholder="Try searching 'BINS'" />
+      <div class="header-icons">
+        <i class="header-icon fas fa-bookmark"></i>
+        <i class="header-icon fas fa-file-alt"></i>
+        <i class="header-icon fas fa-user-circle"></i>
+        <i class="header-icon fas fa-moon"></i>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu">
+      <div class="nav-links">
+        <a href="tools/" class="nav-link">TOOLS</a>
+        <a href="bins/" class="nav-link">BINS</a>
+        <a href="extraps/" class="nav-link">EXTRAPS</a>
+        <a href="accounts/" class="nav-link">ACCOUNTS</a>
+        <a href="vpn/" class="nav-link">VPN</a>
+        <a href="MD_TECH_GEN/" class="nav-link" target="_blank">CARD GEN</a>
+      </div>
+
+      <!-- Telegram Banner -->
+      <div class="telegram-banner">
+        <span>Join Our Channel Of telegram Now</span>
+        <a href="https://t.me/+SPjxul1Ln6A4YWRl" class="join-btn">JOIN NOW!</a>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area">
+      <h2>Tools</h2>
+      <div class="tools-list">
+        <div class="tool-card">
+          <i class="fas fa-wrench tool-icon"></i>
+          <div class="tool-name">Tool 1</div>
+        </div>
+        <div class="tool-card">
+          <i class="fas fa-cogs tool-icon"></i>
+          <div class="tool-name">Tool 2</div>
+        </div>
+        <div class="tool-card">
+          <i class="fas fa-hammer tool-icon"></i>
+          <div class="tool-name">Tool 3</div>
+        </div>
+        <div class="tool-card">
+          <i class="fas fa-screwdriver tool-icon"></i>
+          <div class="tool-name">Tool 4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
